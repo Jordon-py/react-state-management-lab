@@ -15,8 +15,9 @@ export default [
         ecmaVersion: 'latest',
         ecmaFeatures: { jsx: true },
         sourceType: 'module',
+        },
       },
-    },
+    ]
     settings: { react: { version: '18.3' } },
     plugins: {
       react,
@@ -33,6 +34,7 @@ export default [
         'warn',
         { allowConstantExport: true },
       ],
+      'react/prop-types': 'off', // add this line
+      'react/no-unescaped-entities': 'off', // add this line
     },
   },
-]

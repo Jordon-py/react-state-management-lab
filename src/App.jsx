@@ -1,9 +1,38 @@
 import React, { useState } from 'react';
+import './App.css';
+
+const App = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const handleDarkMode = () => {
+    console.log('Dark Mode!');
+    setIsDarkMode(true);
+  };
+
+  const handleLightMode = () => {
+    console.log('Light Mode!');
+    setIsDarkMode(false);
+  };
+
+  return (
+    <>
+      <div className={isDarkMode ? 'dark' : 'light'}>
+        <h1>Hello world!</h1>
+      </div>
+      <div>
+        <button onClick={handleDarkMode}>Dark Mode</button>
+        <button onClick={handleLightMode}>Light Mode</button>
+      </div>
+    </>
+  );
+};
+
+
+
 
 function App() {
   // Create state variables for team, money, and zombieFighters
   const [team, setTeam] = useState([]);
-  const [money, setMoney] = useState(100);
   const [zombieFighters, setZombieFighters] = useState([
     {
       id: 1,
